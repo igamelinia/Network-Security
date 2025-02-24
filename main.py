@@ -1,7 +1,11 @@
 from networksecurity.exception.exception import CustomException
 from networksecurity.logging.logger import logging
 from networksecurity.components.data_ingestion import DataIngestion
-from networksecurity.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
+from networksecurity.components.data_validation import DataValidation
+from networksecurity.components.data_transformation import DataTransformation
+from networksecurity.entity.config_entity import ( 
+    DataIngestionConfig, TrainingPipelineConfig, DataValidationConfig,
+    DataTransformationConfig)
 import sys
 
 
@@ -13,7 +17,21 @@ if __name__=="__main__":
         logging.info("initiate the data ingestion")
         dataingestionartifact= data_ingestion.initiate_data_ingestion()
         print(dataingestionartifact)
+        logging.info("Process Data ingestion Success")
 
+        datavalidationconfig = DataValidationConfig(trainingpipelineconfig)
+        data_vallidation = DataValidation(data_ingestion_artifact=dataingestionartifact, data_validation_config=datavalidationconfig)
+        logging.info("initiate data validation process")
+        datavalidationartifact = data_vallidation.initiate_data_validation()
+        print(datavalidationartifact)
+        logging.info("Process Data validation Success")
+
+        datatransformationconfig = DataTransformationConfig(trainingpipelineconfig)
+        data_transformation = DataTransformation(data_validation_artifact=datavalidationartifact, data_transformation_config=datatransformationconfig)
+        logging.info("initiate data transformation process")
+        datatransformationartifact = data_transformation.initiate_data_transformation()
+        print(datatransformationartifact)
+        logging.info("Process Data transformation Success")
 
     except Exception as e:
         raise CustomException(e, sys)
