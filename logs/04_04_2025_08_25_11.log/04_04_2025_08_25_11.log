@@ -1,0 +1,41 @@
+[ 2025-04-04 08:25:21,590 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-04-04 08:25:21,637 ] 107 dagshub - INFO - Accessing as igamelinia
+[ 2025-04-04 08:25:24,409 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/igamelinia/Network-Security "HTTP/1.1 200 OK"
+[ 2025-04-04 08:25:27,544 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-04-04 08:25:27,544 ] 107 dagshub - INFO - Initialized MLflow to track repo "igamelinia/Network-Security"
+[ 2025-04-04 08:25:27,559 ] 107 dagshub - INFO - Repository igamelinia/Network-Security initialized!
+[ 2025-04-04 08:25:27,560 ] 18 root - INFO - initiate the data ingestion
+[ 2025-04-04 08:25:37,395 ] 58 root - INFO - Performed train test split on the dataframe
+[ 2025-04-04 08:25:37,395 ] 59 root - INFO - Out from split_data_as_train_test method
+[ 2025-04-04 08:25:37,395 ] 62 root - INFO - Exporting train and test file path
+[ 2025-04-04 08:25:37,550 ] 65 root - INFO - Export train and test file path succeses
+[ 2025-04-04 08:25:37,581 ] 21 root - INFO - Process Data ingestion Success
+[ 2025-04-04 08:25:37,595 ] 25 root - INFO - initiate data validation process
+[ 2025-04-04 08:25:37,687 ] 33 root - INFO - Required number of columns : 2
+[ 2025-04-04 08:25:37,687 ] 34 root - INFO - Dataframe has columns : 31
+[ 2025-04-04 08:25:37,687 ] 33 root - INFO - Required number of columns : 2
+[ 2025-04-04 08:25:37,687 ] 34 root - INFO - Dataframe has columns : 31
+[ 2025-04-04 08:25:37,948 ] 28 root - INFO - Process Data validation Success
+[ 2025-04-04 08:25:37,948 ] 32 root - INFO - initiate data transformation process
+[ 2025-04-04 08:25:37,948 ] 47 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2025-04-04 08:25:37,948 ] 49 root - INFO - Starting data transformastion
+[ 2025-04-04 08:25:37,971 ] 37 root - INFO - Entered get_data_trnasformer_object method of Trnasformation class
+[ 2025-04-04 08:25:37,971 ] 39 root - INFO - Initiate KNNimputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2025-04-04 08:25:37,999 ] 43 root - INFO - Entered the Save Object method of Main_utils class
+[ 2025-04-04 08:25:37,999 ] 47 root - INFO - Exited the Save Object method
+[ 2025-04-04 08:25:37,999 ] 43 root - INFO - Entered the Save Object method of Main_utils class
+[ 2025-04-04 08:25:38,014 ] 47 root - INFO - Exited the Save Object method
+[ 2025-04-04 08:25:38,014 ] 35 root - INFO - Process Data transformation Success
+[ 2025-04-04 08:25:38,014 ] 39 root - INFO - initiate Model Trainer process
+[ 2025-04-04 08:26:06,635 ] 93 root - INFO - Model Report : 
+ {'Logistic Regression': {'test_f1_score': 0.9337038507344184, 'train_f1_score': 0.936277475297439, 'best_params': {}}, 'Random Forest': {'test_f1_score': 0.973015873015873, 'train_f1_score': 0.9915556007732221, 'best_params': {'n_estimators': 128}}, 'AdaBoost': {'test_f1_score': 0.932448262397501, 'train_f1_score': 0.9343167547094587, 'best_params': {'learning_rate': 0.1, 'n_estimators': 256}}, 'Gradien Boosting': {'test_f1_score': 0.9518167456556083, 'train_f1_score': 0.9572062979410577, 'best_params': {}}}
+[ 2025-04-04 08:26:06,870 ] 109 root - INFO - Best model : RandomForestClassifier(n_estimators=128)
+[ 2025-04-04 08:26:06,870 ] 110 root - INFO - Best name model : Random Forest
+[ 2025-04-04 08:26:06,870 ] 111 root - INFO - Params Best Model : {'n_estimators': 128}
+[ 2025-04-04 08:30:04,265 ] 868 urllib3.connectionpool - WARNING - Retrying (Retry(total=6, connect=7, read=7, redirect=7, status=7)) after connection broken by 'SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:2427)')': /igamelinia/Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/056dd856120840b79b959372d0a86661/6c5bd224375946daba5b395464392296/artifacts/model/model.pkl
+[ 2025-04-04 08:38:38,217 ] 43 root - INFO - Entered the Save Object method of Main_utils class
+[ 2025-04-04 08:38:38,266 ] 47 root - INFO - Exited the Save Object method
+[ 2025-04-04 08:38:38,266 ] 43 root - INFO - Entered the Save Object method of Main_utils class
+[ 2025-04-04 08:38:38,317 ] 47 root - INFO - Exited the Save Object method
+[ 2025-04-04 08:38:38,317 ] 134 root - INFO - Model trainer artifact : ModelTrainerArtifact(trained_model_file_path='Artifacts\\04_04_2025_08_25_12\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9915556007732221, precision_score=0.9900446972775294, recall_score=0.9930711228856736), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.973015873015873, precision_score=0.9653543307086614, recall_score=0.9808))
+[ 2025-04-04 08:38:38,324 ] 42 root - INFO - Process Model Trainer Success

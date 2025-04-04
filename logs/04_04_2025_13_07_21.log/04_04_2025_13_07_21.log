@@ -1,0 +1,6 @@
+[ 2025-04-04 13:07:29,627 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-04-04 13:07:29,635 ] 107 dagshub - INFO - Accessing as igamelinia
+[ 2025-04-04 13:07:33,887 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/igamelinia/Network-Security "HTTP/1.1 200 OK"
+[ 2025-04-04 13:07:35,479 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-04-04 13:07:35,481 ] 107 dagshub - INFO - Initialized MLflow to track repo "igamelinia/Network-Security"
+[ 2025-04-04 13:07:35,482 ] 107 dagshub - INFO - Repository igamelinia/Network-Security initialized!

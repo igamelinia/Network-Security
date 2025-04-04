@@ -48,3 +48,24 @@ def save_object(file_path:str, obj:object):
 
     except Exception as e:
         raise CustomException(e, sys)
+    
+# function for load object pkl like preprocessor and model
+def load_object(file_path:str) -> object:
+    try:
+        if not os.path.exists(file_path):
+            raise Exception(f"The file: {file_path} is not exists")
+        else:
+            with open(file_path, "rb") as file_obj:
+                return pickle.load(file_obj)
+    except Exception as e:
+        raise CustomException(e, sys) from e 
+    
+# function for load data with format numpy array like dataset after transformation
+def load_numpy_array_data(file_path:str) -> np.array:
+    try:
+        if not os.path.exists(file_path):
+            raise Exception(f"The File: {file_path} is not exists")
+        with open(file_path, "rb") as file_array:
+            return np.load(file_array)
+    except Exception as e:
+        raise CustomException(e,sys)
